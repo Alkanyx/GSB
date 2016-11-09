@@ -1,3 +1,3 @@
 <?php
-echo "ntm amael ☺☻☺☻☺☻☺☻☺☻☺☻☺☻☺☻"
+echo "ceci est un test"
 ?>
