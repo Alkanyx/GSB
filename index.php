@@ -1,3 +1,3 @@
 <?php
-echo "ntm sebaestien t'es qu'une merde"
+echo "gros porc de race"
 ?>
