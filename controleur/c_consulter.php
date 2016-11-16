@@ -17,7 +17,7 @@ switch($action){
 		break;
 	}
 	case 'formMed':{
-		include("vues/v_formMedicament.php");
+		include("vues/v_formMed.php");
 		break;
 	}
 	
