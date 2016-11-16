@@ -1,8 +1,4 @@
 <title>formulaire VISITEUR</title>
-
-<div name="droite" style="float: left; width: 80%;">
-	<div name="bas"
-		style="margin: 10 2 2 2; clear: left; background-color:white; color: white; height: 88%;">
 		<form name="formVISITEUR" method="post" action="recupVISITEUR.php">
 			<h1>Visiteurs</h1>
 			<select name="lstDept" class="titre"><option value="">Département</option>
@@ -20,5 +16,3 @@
 				class="titre">&nbsp;</label><input class="zone" type="button"
 				value="<"></input><input class="zone" type="button" value=">"></input>
 		</form>
-	</div>
-</div>
