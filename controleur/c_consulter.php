@@ -14,6 +14,7 @@ switch($action){
 		break;
 	}
 	case 'formRap':{
+		getPrac();
 		include("vues/v_formRapport.php");
 		break;
 	}

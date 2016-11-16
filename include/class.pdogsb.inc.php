@@ -82,6 +82,12 @@ class PdoGsb {
 		$ligne = $res->fetch ();
 		return $ligne;
 	}
+	public function getPrac() {
+		$req = "select pra_nom as nom from  praticien";
+		$res = PdoGsb::$monPdo->query ( $req );
+		$laLigne = $res->fetchAll ();
+		return $laLigne;
+	}
 	/**
 	 * Retourne le nombre de justificatif d'un visiteur pour un mois donné
 	 *
