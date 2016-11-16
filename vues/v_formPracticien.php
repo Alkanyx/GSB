@@ -1,4 +1,5 @@
 
+<title>formulaire PRATICIEN</title>
 <script language="javascript">
 		function chercher($pNumero) {  
 			var xhr_object = null; 	    
