@@ -1,10 +1,7 @@
-<div name="droite" style="float: left; width: 80%;">
-	<div name="bas"
-		style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
 
 
-		<title>formulaire PRATICIEN</title>
-		<script language="javascript">
+<title>formulaire PRATICIEN</title>
+<script language="javascript">
 		function chercher($pNumero) {  
 			var xhr_object = null; 	    
 			if(window.XMLHttpRequest) // Firefox 
@@ -30,21 +27,18 @@
 	   }
 	</script>
 
-		<div name="droite" style="float: left; width: 80%;">
-			<div name="bas"
-				style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
-				<h1>Praticiens</h1>
-				<form name="formListeRecherche">
-					<select name="lstPrat" class="titre"
-						onClick="chercher(this.value);">
-						<option>Choisissez un praticien</option>
-						<option value="1">Notini</option>
-						<option value="2">Gosselin</option>
-						<option value="3">Delahaye</option>
-					</select>
-				</form>
-				<form id="formPraticien"></form>
-			</div>
-		</div>
+<div name="droite" style="float: left; width: 80%;">
+	<div name="bas"
+		style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
+		<h1>Praticiens</h1>
+		<form name="formListeRecherche">
+			<select name="lstPrat" class="titre" onClick="chercher(this.value);">
+				<option>Choisissez un praticien</option>
+				<option value="1">Notini</option>
+				<option value="2">Gosselin</option>
+				<option value="3">Delahaye</option>
+			</select>
+		</form>
+		<form id="formPraticien"></form>
 	</div>
 </div>
