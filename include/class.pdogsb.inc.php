@@ -73,8 +73,8 @@ class PdoGsb {
 	 *        
 	 */
 	public function getInfosVisiteur($login, $mdp) {
-		$res = PdoGsb::$monPdo->prepare ( "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
-		where visiteur.login=:login and visiteur.mdp=:mdp" );
+		$res = PdoGsb::$monPdo->prepare ( "select * from visiteur 
+		where visiteur.login=:login and visiteur.password=:mdp" );
 		$res->execute ( array (
 				'login' => $login,
 				'mdp' => $mdp 

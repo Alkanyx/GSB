@@ -14,16 +14,11 @@ switch($action){
 		$mdp = $_REQUEST['mdp'];
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
 		if(!is_array( $visiteur)){
-			ajouterErreur("Login ou mot de passe incorrect");
+			echo "yooooooooo";
 			//include("vues/v_erreurs.php");
 			include("vues/v_connexion.php");
 		}
 		else{
-			$id = $visiteur['id'];
-			$nom =  $visiteur['nom'];
-			$prenom = $visiteur['prenom'];
-			connecter($id,$nom,$prenom);
-			echo "yooooooooo";
 			header('location:index.php?uc=consulter');
 		}
 		break;
