@@ -11,13 +11,13 @@ if(!isset($_REQUEST['uc']) || !$estConnecte){
 $uc = $_REQUEST['uc'];
 switch($uc){
 	case 'connexion':{
-		include("controleurs/c_connexion.php");break;
+		include("controleur/c_connexion.php");break;
 	}
 	case 'gererFrais' :{
-		include("controleurs/c_gererFrais.php");break;
+		include("controleur/c_gererFrais.php");break;
 	}
 	case 'etatFrais' :{
-		include("controleurs/c_etatFrais.php");break; 
+		include("controleur/c_etatFrais.php");break; 
 	}
 }
 include("vues/v_pied.php") ;
