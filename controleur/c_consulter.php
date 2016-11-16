@@ -3,7 +3,6 @@ if(!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = 'formPrac';
 }
 $action = $_REQUEST['action'];
-echo $action;
 switch($action){
 	case 'formPrac':{
 		include("vues/v_formPracticien.php");
