@@ -2,7 +2,6 @@
 require_once("include/fct.inc.php");
 require_once ("include/class.pdogsb.inc.php");
 include("vues/v_entete.php") ;
-include("vues/v_menu.php") ;
 
 session_start();
 $pdo = PdoGsb::getPdoGsb();

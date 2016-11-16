@@ -1,11 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<html>
 <head>
-<title>GSB Medicament</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>GSB : Suivi de la Visite médicale</title>
 <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" type="image" href="./images/logo.jpg" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
-<body>
+<body bgcolor="white" text="5599EE">
 	<h1>Accueil de GSB</h1>
+	<?php include("./vues/v_menu.php");?>
+
+	<div name="droite" style="float: left; width: 80%;">
+		<div name="bas"
+			style="margin: 10 2 2 2; clear: left; background-color: #77AADD; color: white; height: 88%;">
