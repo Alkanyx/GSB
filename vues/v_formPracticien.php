@@ -1,12 +1,5 @@
-<?php /* <html>
-<head>
-	<title>formulaire PRATICIEN</title>
-	<style type="text/css">
-		<!-- body {background-color: white; color:5599EE; } 
-			label.titre { width : 180 ;  clear:left; float:left; } 
-			.zone { width : 300 ; float : left; color:white } -->
-	</style>	*/?>
-	<script language = "javascript">
+
+<script language="javascript">
 		function chercher($pNumero) {  
 			var xhr_object = null; 	    
 			if(window.XMLHttpRequest) // Firefox 
@@ -31,36 +24,20 @@
 		   
 	   }
 	</script>
-<?php /* </head>
-<body>*/?>
-<div name="haut" style="margin: 2 2 2 2 ;height:6%;"><h1><img src="logo.jpg" width="100" height="60"/>Gestion des visites</h1></div>
-<div name="gauche" style="float:left;width:18%; background-color:white; height:100%;">
-	<h2>Outils</h2>
-	<ul><li>Comptes-Rendus</li>
-		<ul>
-			<li><a href="formRAPPORT_VISITE.htm" >Nouveaux</a></li>
-			<li>Consulter</li>
-		</ul>
-		<li>Consulter</li>
-		<ul><li><a href="formMEDICAMENT.htm" >Médicaments</a></li>
-			<li><a href="formPRATICIEN.htm" >Praticiens</a></li>
-			<li><a href="formVISITEUR.htm" >Autres visiteurs</a></li>
-		</ul>
-	</ul>
-</div>
-<div name="droite" style="float:left;width:80%;">
-	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD;color:white;height:88%;">
-		<h1> Praticiens </h1>
-		<form name="formListeRecherche" >
+
+<div name="droite" style="float: left; width: 80%;">
+	<div name="bas"
+		style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
+		<h1>Praticiens</h1>
+		<form name="formListeRecherche">
 			<select name="lstPrat" class="titre" onClick="chercher(this.value);">
 				<option>Choisissez un praticien</option>
 				<option value="1">Notini</option>
 				<option value="2">Gosselin</option>
 				<option value="3">Delahaye</option>
-			</select>	
+			</select>
 		</form>
-		<form id="formPraticien">	
-		</form>
+		<form id="formPraticien"></form>
 	</div>
 </div>
 <?php /*</body>

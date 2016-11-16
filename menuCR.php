@@ -1,6 +1,3 @@
-<html>
-<head><title>GSB : Suivi de la Visite médicale </title></head>
-<body bgcolor="white" text="5599EE">
 <div name="haut" style="margin: 2 2 2 2 ;height:6%;"><h1><img src="logo.jpg" width="100" height="60"/>Gestion des visites</h1></div>
 <div name="gauche" style="float:left;width:18%; background-color:white; height:100%;">
 	<h2>Outils</h2>
@@ -19,5 +16,3 @@
 <div name="droite" style="float:left;width:80%;">
 	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD;color:white;height:88%;"></div>
 </div>
-</body>
-</html>

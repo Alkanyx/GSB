@@ -1,6 +1,4 @@
-<html>
-<head>
-	<title>formulaire VISITEUR</title>
+<title>formulaire VISITEUR</title>
 	<style type="text/css">
 		<!-- body {background-color: white; color:5599EE; } 
 			.titre { width : 180 ;  clear:left; float:left; } 
