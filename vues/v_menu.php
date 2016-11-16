@@ -13,7 +13,6 @@
 		<li>Comptes-Rendus</li>
 		<ul>
 			<li><a href="index.php?uc=consulter&action=formRap">Nouveaux</a></li>
-			<li>Consulter</li>
 		</ul>
 		<li>Consulter</li>
 		<ul>
