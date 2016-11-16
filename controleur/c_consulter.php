@@ -8,6 +8,18 @@ switch($action){
 		include("vues/v_formPracticien.php");
 		break;
 	}
+	case 'formVis':{
+		include("vues/v_formVisiteur.php");
+		break;
+	}
+	case 'formRap':{
+		include("vues/v_formRapport.php");
+		break;
+	}
+	case 'formMed':{
+		include("vues/v_formMedicament.php");
+		break;
+	}
 	
 }
 ?>
