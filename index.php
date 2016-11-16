@@ -6,12 +6,12 @@ session_start();
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = estConnecte();
 if(!isset($_REQUEST['uc']) || !$estConnecte){
-     $_REQUEST['uc'] = 'connexion';
+     $_REQUEST['uc'] = 'infoprac';
 }	 
 $uc = $_REQUEST['uc'];
 switch($uc){
-	case 'connexion':{
-		include("controleur/c_connexion.php");break;
+	case 'infoprac':{
+		include("controleur/c_infoPrac.php");break;
 	}
 	case 'gererFrais' :{
 		include("controleur/c_gererFrais.php");break;

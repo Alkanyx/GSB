@@ -5,7 +5,7 @@
 		<!-- body {background-color: white; color:5599EE; } 
 			label.titre { width : 180 ;  clear:left; float:left; } 
 			.zone { width : 300 ; float : left; color:white } -->
-	</style>
+	</style>	*/?>
 	<script language = "javascript">
 		function chercher($pNumero) {  
 			var xhr_object = null; 	    
@@ -31,8 +31,8 @@
 		   
 	   }
 	</script>
-</head>
-<body>	*/?>
+<?php /* </head>
+<body>*/?>
 <div name="haut" style="margin: 2 2 2 2 ;height:6%;"><h1><img src="logo.jpg" width="100" height="60"/>Gestion des visites</h1></div>
 <div name="gauche" style="float:left;width:18%; background-color:white; height:100%;">
 	<h2>Outils</h2>
