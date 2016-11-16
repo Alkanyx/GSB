@@ -19,6 +19,7 @@ switch($action){
 			include("vues/v_connexion.php");
 		}
 		else{
+			$_SESSION['login']=$visiteur['login'];
 			header('location:index.php?uc=consulter');
 		}
 		break;

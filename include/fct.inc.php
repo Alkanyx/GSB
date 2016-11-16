@@ -11,7 +11,7 @@
  * @return vrai ou faux 
  */
 function estConnecte(){
-  return isset($_SESSION['idVisiteur']);
+  return isset($_SESSION['login']);
 }
 /**
  * Enregistre dans une variable session les infos d'un visiteur

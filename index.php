@@ -13,6 +13,7 @@ if(!isset($_REQUEST['uc']) || !$estConnecte){
 $uc = $_REQUEST['uc'];
 switch($uc){
 	case 'consulter':{
+		echo "yofdp";
 		include("controleur/c_consulter.php");break;
 	}
 	case 'connexion' :{
