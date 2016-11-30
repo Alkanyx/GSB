@@ -13,7 +13,7 @@ switch($action){
 		break;
 	}
 	case 'formRap':{
-		getPrac();
+		$prac=$pdo->getPrac();
 		include("vues/v_formRapport.php");
 		break;
 	}
