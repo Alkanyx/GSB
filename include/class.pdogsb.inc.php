@@ -83,7 +83,7 @@ class PdoGsb {
 		return $ligne;
 	}
 	public function getPrac() {
-		$req = "select pra_nom as nom from  praticien";
+		$req = "select * as nom from  praticien";
 		$res = PdoGsb::$monPdo->query ( $req );
 		$laLigne = $res->fetchAll ();
 		return $laLigne;
