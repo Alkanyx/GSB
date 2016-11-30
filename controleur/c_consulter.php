@@ -32,8 +32,8 @@ switch($action){
 	}
 	case 'medicament':{
 		$lesMedicaments=$pdo->getMedoc();
-		if(isset($_REQUEST['practicien'])){
-			$lePracticien=$pdo->getInfoPrac($_REQUEST['practicien']);
+		if(isset($_REQUEST['medicament'])){
+			$leMedicament=$pdo->getInfoMedoc($_REQUEST['medicament']);
 		}
 		include("vues/v_medicament.php");
 		break;
