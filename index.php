@@ -12,7 +12,7 @@ if(!isset($_REQUEST['uc']) && !$estConnecte){
 	$_REQUEST['uc'] = 'consulter';
 }
 $uc = $_REQUEST['uc'];
-switch($uc){
+switch($uc){                                                                                             
 	case 'consulter':{
 		include("controleur/c_consulter.php");break;
 	}

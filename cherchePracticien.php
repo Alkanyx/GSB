@@ -1,6 +1,5 @@
 <?php 
 	
-	$curseur = $laBase->requeteSelect('select * from praticien where pra_num='.$_POST["pratNum"]); 
 	$res=$pdo->getInfosPrac($_POST["pratNum"]);
 	if (is_array($res)) {
 		//on positionne les champs avec les valeurs de la table

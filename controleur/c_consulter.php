@@ -1,3 +1,4 @@
+
 <?php
 if(!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = 'formPrac';
@@ -14,7 +15,7 @@ switch($action){
 		break;
 	}
 	case 'formRap':{
-		$prac=$pdo->getPrac();
+		$lesPracticiens=$pdo->getPrac();
 		include("vues/v_formRapport.php");
 		break;
 	}

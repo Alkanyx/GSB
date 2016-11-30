@@ -2,6 +2,7 @@
 if(!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = 'demandeconnexion';
 }
+echo "fdp";
 $action = $_REQUEST['action'];
 switch($action){
 	case 'demandeconnexion':{
@@ -21,6 +22,12 @@ switch($action){
 			$_SESSION['login']=$visiteur['login'];
 			header('location:index.php?uc=consulter');
 		}
+		break;
+	}
+	case 'deconnexion':{
+		deconnecter();
+		echo "fdp";
+		header('location:index.php');
 		break;
 	}
 	
