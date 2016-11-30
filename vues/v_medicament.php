@@ -12,7 +12,7 @@
 		
 		<?php
 		if (! isset ( $_REQUEST ['practicien'] )) {
-			echo '<option value=0> { SÃ©lectionner un practicien } </option>';
+			echo '<option value=0> { Sélectionner un practicien } </option>';
 		} else {
 			echo '<option value=0>' . $lePracticien ['PRA_NOM'] . ' ' . $lePracticien ['PRA_PRENOM'] . '</option>';
 		}
@@ -31,9 +31,9 @@
 		<table style="color:white; border-color:white;" border='1'>
 			<caption>Informations concernant <?php  echo $lePracticien ['PRA_NOM'].' '.$lePracticien ['PRA_PRENOM']?></caption>
 			<tr>
-				<th>NumÃ©ro </th>
+				<th>Numéro </th>
 				<th>Nom</th>
-				<th>PrÃ©nom</th>
+				<th>Prénom</th>
 				<th>Adresse</th>
 				<th>Ville</th>
 				<th>CP</th>
