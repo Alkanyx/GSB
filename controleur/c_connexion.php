@@ -14,8 +14,7 @@ switch($action){
 		$mdp = $_REQUEST['mdp'];
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
 		if(!is_array( $visiteur)){
-			echo "yooooooooo";
-			//include("vues/v_erreurs.php");
+			echo "Erreur de connexion";
 			include("vues/v_connexion.php");
 		}
 		else{

@@ -5,6 +5,7 @@ if(!isset($_REQUEST['action'])){
 $action = $_REQUEST['action'];
 switch($action){
 	case 'formPrac':{
+		$lesPrac=$pdo->getPrac();
 		include("vues/v_formPracticien.php");
 		break;
 	}
