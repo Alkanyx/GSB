@@ -40,7 +40,7 @@
         }
     </script>
 <form name="formRAPPORT_VISITE" method="post"
-	action="index.php">
+	action="index.php?uc=consulter&action=saisirRap">
 	<h1>Rapport de visite</h1>
 	<label class="titre">NUMERO :</label><input type="text" size="10"
 		name="RAP_NUM" class="zone" /> <label class="titre">DATE VISITE :</label><input

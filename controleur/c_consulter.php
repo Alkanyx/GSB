@@ -23,6 +23,10 @@ switch($action){
 		include("vues/v_formMed.php");
 		break;
 	}
-	
+	case 'saisirRap':{
+		
+		echo $_POST['RAP_NUM'];
+		break;
+	}
 }
 ?>

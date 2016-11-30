@@ -22,9 +22,6 @@ switch($uc){
 	case 'etatFrais' :{
 		include("controleur/c_etatFrais.php");break; 
 	}
-	case 'saisir' :{
-		include("controleur/c_saisir.php");break;
-	}
 }
 include("vues/v_pied.php") ;
 ?>
