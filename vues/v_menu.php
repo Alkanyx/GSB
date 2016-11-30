@@ -1,5 +1,3 @@
-
-
 <div name="haut" style="margin: 2 2 2 2; height: 6%;">
 	<h1>
 		<a href="index.php"><img src="images/logo.jpg" width="100" height="60" /></a>Gestion
@@ -14,7 +12,7 @@
 		<ul>
 			<li><a href="index.php?uc=consulter&action=formRap">Nouveaux</a></li>
 			<li>Consulter</li>
-		</ul>
+		</ul> 
 		<li>Consulter</li>
 		<ul>
 			<li><a href="index.php?uc=consulter&action=medicament">Médicaments</a></li>
