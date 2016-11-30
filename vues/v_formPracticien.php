@@ -11,19 +11,20 @@
 				onChange="javascript:location.href = this.value;">
 		
 		<?php
+		var_dump($lesPracticiens);
 		if (! isset ( $_REQUEST ['practicien'] )) {
-			echo '<option value=0> { Sélectionner un practicien } </option>';
+			echo '<option value=0> { SÃ©lectionner un practicien } </option>';
 		} else {
 			echo '<option value=0>' . $lePracticien ['nom'] . ' ' . $lePracticien ['prenom'] . '</option>';
 		}
 		foreach ( $lesPracticiens as $unPracticien ) {
 			if (! isset ( $_REQUEST ['visiteur'] ) || $unVisiteur ['id'] != $leVisiteur ['id']) {
 				echo '
-			<option value=index.php?uc=comptable&action=listeFraisComptable&visiteur=' . $unVisiteur ['id'] . '>' . $unVisiteur ['nom'] . ' ' . $unVisiteur ['prenom'] . '</option>';
+			<option value=index.php?uc=comptable&action=listeFraisComptable&visiteur=' . $unPracticien ['PRA_NUM'] . '>' . $unPracticien ['PRA_NOM'] . ' ' . $unPracticien ['PRA_PRENOM'] . '</option>';
 			}
 		}
 		
-		if (isset ( $_REQUEST ['visiteur'] )) {
+		if (isset ( $_REQUEST ['visiteur'] )) {}
 			?>
 	</select>
 		</form>
