@@ -35,7 +35,7 @@ switch($action){
 		if(isset($_REQUEST['practicien'])){
 			$lePracticien=$pdo->getInfoPrac($_REQUEST['practicien']);
 		}
-		include("vues/v_formMed.php");
+		include("vues/v_medicament.php");
 		break;
 	}
 }

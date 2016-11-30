@@ -7,19 +7,19 @@
 		style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
 		<h1>Praticiens</h1>
 		<form name="formListeRecherche">
-			<select name="select" id="selectPrac"
+			<select name="select" id="selectMed"
 				onChange="javascript:location.href = this.value;">
 		
 		<?php
 		if (! isset ( $_REQUEST ['practicien'] )) {
-			echo '<option value=0> { SÈlectionner un practicien } </option>';
+			echo '<option value=0> { S√©lectionner un m√©dicament } </option>';
 		} else {
 			echo '<option value=0>' . $lePracticien ['PRA_NOM'] . ' ' . $lePracticien ['PRA_PRENOM'] . '</option>';
 		}
-		foreach ( $lesPracticiens as $unPracticien ) {
+		foreach ( $lesMedicaments as $unMedicament ) {
 			if ($unPracticien ['PRA_NUM'] != $lePracticien ['PRA_NUM']) {
 				echo '
-			<option value=index.php?uc=consulter&action=formPrac&practicien=' . $unPracticien ['PRA_NUM'] . '>' . $unPracticien ['PRA_NOM'] . ' ' . $unPracticien ['PRA_PRENOM'] . '</option>';
+			<option value=index.php?uc=consulter&action=formPrac&practicien=' . $unMedicament ['MED_DEPOTLEGAL'] . '>' . $unMedicament ['MED_NOMCOMMERCIAL'] . '</option>';
 			}
 		}
 		
@@ -31,9 +31,9 @@
 		<table style="color:white; border-color:white;" border='1'>
 			<caption>Informations concernant <?php  echo $lePracticien ['PRA_NOM'].' '.$lePracticien ['PRA_PRENOM']?></caption>
 			<tr>
-				<th>NumÈro </th>
+				<th>Num√©ro </th>
 				<th>Nom</th>
-				<th>PrÈnom</th>
+				<th>Pr√©nom</th>
 				<th>Adresse</th>
 				<th>Ville</th>
 				<th>CP</th>

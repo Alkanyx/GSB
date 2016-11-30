@@ -92,7 +92,7 @@ class PdoGsb {
 	
 	
 	public function getMedoc() {
-		$req = "select * from  praticien";
+		$req = "select * from  medicament";
 		$res = PdoGsb::$monPdo->query ( $req );
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
