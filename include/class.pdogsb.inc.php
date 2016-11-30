@@ -122,16 +122,9 @@ class PdoGsb {
 
 	
 	public function saisirRapport($IdVis,$Num,$DateVis,$NumPrat,$RapDate,$IdMotif,$RapMotif,$RapBilan) {
-		$req = "insert into rapport_visite(VIS_MATRICULE,RAP_NUM,PRA_NUM,RAP_DATE,RAP_BILAN,pra_numRemp,idMotif,rap_etat,rap_conf,date_visite) 
-		values('$idVisiteur','$mois',0,0,now(),'CR')";
+		$req = "insert into rapport_visite(VIS_MATRICULE,RAP_NUM,PRA_NUM,RAP_DATE,RAP_BILAN,idMotif,rap_etat,rap_conf,date_visite) 
+		values('$IdVis','$num','$NumPrat','$RapDate','$RapBilan','$IdMotif','validé','confimé','$DateVis')";
 		PdoGsb::$monPdo->exec ( $req );
-		$lesIdFrais = $this->getLesIdFrais ();
-		foreach ( $lesIdFrais as $uneLigneIdFrais ) {
-			$unIdFrais = $uneLigneIdFrais ['idfrais'];
-			$req = "insert into lignefraisforfait(idvisiteur,mois,idFraisForfait,quantite) 
-			values('$idVisiteur','$mois','$unIdFrais',0)";
-			PdoGsb::$monPdo->exec ( $req );
-		}
 	}
 	/**
 	 * Crée un nouveau frais hors forfait pour un visiteur un mois donné
