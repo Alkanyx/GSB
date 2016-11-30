@@ -5,48 +5,45 @@
 <div name="droite" style="float: left; width: 80%;">
 	<div name="bas"
 		style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
-		<h1>Praticiens</h1>
+		<h1>MÃ©dicaments</h1>
 		<form name="formListeRecherche">
-			<select name="select" id="selectPrac"
+			<select name="select" id="selectMed"
 				onChange="javascript:location.href = this.value;">
 		
 		<?php
-		if (! isset ( $_REQUEST ['practicien'] )) {
-			echo '<option value=0> { Sélectionner un practicien } </option>';
+		if (! isset ( $_REQUEST ['medicament'] )) {
+			echo '<option value=0> { SÃ©lectionner un mÃ©dicament } </option>';
 		} else {
-			echo '<option value=0>' . $lePracticien ['PRA_NOM'] . ' ' . $lePracticien ['PRA_PRENOM'] . '</option>';
+			echo '<option value=0>' . $leMedicament ['MED_NOMCOMMERCIAL'] . '</option>';
 		}
-		foreach ( $lesPracticiens as $unPracticien ) {
-			if ($unPracticien ['PRA_NUM'] != $lePracticien ['PRA_NUM']) {
+		foreach ( $lesMedicaments as $unMedicament ) {
+			if ($unMedicament ['MED_DEPOTLEGAL'] != $leMedicament ['MED_DEPOTLEGAL']) {
 				echo '
-			<option value=index.php?uc=consulter&action=formPrac&practicien=' . $unPracticien ['PRA_NUM'] . '>' . $unPracticien ['PRA_NOM'] . ' ' . $unPracticien ['PRA_PRENOM'] . '</option>';
+			<option value=index.php?uc=consulter&action=medicament&medicament=' . $unMedicament ['MED_DEPOTLEGAL'] . '>' . $unMedicament ['MED_NOMCOMMERCIAL'] . '</option>';
 			}
 		}
 		
-		if (isset ( $_REQUEST ['practicien'] )) {
+		if (isset ( $_REQUEST ['medicament'] )) {
 			?>
 	</select>
 
 		</form>
-		<table style="color:white; border-color:white;" border='1'>
-			<caption>Informations concernant <?php  echo $lePracticien ['PRA_NOM'].' '.$lePracticien ['PRA_PRENOM']?></caption>
+		<table style="color: white; border-color: white;" border='1'>
+			<caption>Informations concernant <?php  echo $leMedicament ['MED_NOMCOMMERCIAL']?></caption>
 			<tr>
-				<th>Numéro </th>
+				<th>NumÃ©ro</th>
 				<th>Nom</th>
-				<th>Prénom</th>
-				<th>Adresse</th>
-				<th>Ville</th>
-				<th>CP</th>
+				<th>Famille</th>
+				<th>Composition</th>
+				<th>Effets</th>
 			</tr>
 
 			<tr>
-				<td> <?php echo $lePracticien['PRA_NUM'] ?></td>
-				<td><?php echo $lePracticien['PRA_NOM'] ?></td>
-				<td><?php echo $lePracticien['PRA_PRENOM'] ?></td>
-				<td><?php echo $lePracticien['PRA_ADRESSE'] ?></td>
-				<td><?php echo $lePracticien['PRA_CP'] ?></td>
-				<td><?php echo $lePracticien['PRA_VILLE'] ?></td>
-
+				<td> <?php echo $leMedicament['MED_DEPOTLEGAL'] ?></td>
+				<td><?php echo $leMedicament['MED_NOMCOMMERCIAL'] ?></td>
+				<td><?php echo $leMedicament['FAM_LIBELLE'] ?></td>
+				<td><?php echo $leMedicament['MED_COMPOSITION'] ?></td>
+				<td><?php echo $leMedicament['MED_EFFETS'] ?></td>
 			</tr>
 	<?php
 		}

@@ -35,7 +35,11 @@ switch($action){
 		break;
 	}
 	case 'medicament':{
-		include("vues/v_formMed.php");
+		$lesMedicaments=$pdo->getMedoc();
+		if(isset($_REQUEST['medicament'])){
+			$leMedicament=$pdo->getInfoMedoc($_REQUEST['medicament']);
+		}
+		include("vues/v_medicament.php");
 		break;
 	}
 }
