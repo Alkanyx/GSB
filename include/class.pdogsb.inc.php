@@ -199,41 +199,19 @@ class PdoGsb {
 		}
 		return $ok;
 	}
-	/**
-	 * Retourne le dernier mois en cours d'un visiteur
-	 *
-	 * @param
-	 *        	$idVisiteur
-	 * @return le mois sous la forme aaaamm
-	 *        
-	 */
-	public function dernierMoisSaisi($idVisiteur) {
-		$req = "select max(mois) as dernierMois from fichefrais where fichefrais.idvisiteur = '$idVisiteur'";
-		$res = PdoGsb::$monPdo->query ( $req );
-		$laLigne = $res->fetch ();
-		$dernierMois = $laLigne ['dernierMois'];
-		return $dernierMois;
-	}
 	
-	/**
-	 * Crée une nouvelle fiche de frais et les lignes de frais au forfait pour un visiteur et un mois donnés
-	 *
-	 * récupère le dernier mois en cours de traitement, met à 'CL' son champs idEtat, crée une nouvelle fiche de frais
-	 * avec un idEtat à 'CR' et crée les lignes de frais forfait de quantités nulles
-	 *
-	 * @param
-	 *        	$idVisiteur
-	 * @param $mois sous
-	 *        	la forme aaaamm
-	 *        	
-	 */
-	public function creeNouvellesLignesFrais($idVisiteur, $mois) {
-		$dernierMois = $this->dernierMoisSaisi ( $idVisiteur );
-		$laDerniereFiche = $this->getLesInfosFicheFrais ( $idVisiteur, $dernierMois );
-		if ($laDerniereFiche ['idEtat'] == 'CR') {
-			$this->majEtatFicheFrais ( $idVisiteur, $dernierMois, 'CL' );
-		}
-		$req = "insert into fichefrais(idvisiteur,mois,nbJustificatifs,montantValide,dateModif,idEtat) 
+	
+	public function getMatricule($login) {
+		$req = "select VIS_MATRICULE from visiteur where login='$login'";
+		$res = PdoGsb::$monPdo->query ( $req );
+		$mat = $res->fetch ();
+		return $mat[0];
+	}	
+	
+
+	
+	public function saisirRapport($IdVis,$Num,$DateVis,$NumPrat,$RapDate,$IdMotif,$RapMotif,$RapBilan) {
+		$req = "insert into rapport_visite(VIS_MATRICULE,RAP_NUM,PRA_NUM,RAP_DATE,RAP_BILAN,pra_numRemp,idMotif,rap_etat,rap_conf,date_visite) 
 		values('$idVisiteur','$mois',0,0,now(),'CR')";
 		PdoGsb::$monPdo->exec ( $req );
 		$lesIdFrais = $this->getLesIdFrais ();
