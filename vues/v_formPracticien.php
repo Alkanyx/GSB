@@ -34,9 +34,6 @@
 		<form name="formListeRecherche">
 			<select name="lstPrat" class="titre" onClick="chercher(this.value);">
 				<option>Choisissez un praticien</option>
-				<option value="1">Notini</option>
-				<option value="2">Gosselin</option>
-				<option value="3">Delahaye</option>
 			</select>
 		</form>
 		<form id="formPraticien"></form>
