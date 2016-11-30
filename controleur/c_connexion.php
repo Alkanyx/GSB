@@ -2,7 +2,6 @@
 if(!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = 'demandeconnexion';
 }
-echo "fdp";
 $action = $_REQUEST['action'];
 switch($action){
 	case 'demandeconnexion':{
