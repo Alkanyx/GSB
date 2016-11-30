@@ -20,6 +20,10 @@
 			<li><a href="index.php?uc=consulter&action=medicament">Médicaments</a></li>
 			<li><a href="index.php?uc=consulter&action=formPrac">Praticiens</a></li>
 			<li><a href="index.php?uc=consulter&action=formVis">Autres visiteurs</a></li>
+		</ul>		
+		<li>Saisir</li>
+		<ul>
+			<li><a href="index.php?uc=consulter&action=formMed">Médicaments</a></li>
 		</ul>
 		<li>Connexion</li>
 		<ul>
