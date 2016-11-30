@@ -89,6 +89,14 @@ class PdoGsb {
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
 	}
+	
+	
+	public function getMedoc() {
+		$req = "select * from  praticien";
+		$res = PdoGsb::$monPdo->query ( $req );
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
 	/**
 	 * Retourne le nombre de justificatif d'un visiteur pour un mois donné
 	 *
