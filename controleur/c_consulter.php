@@ -6,7 +6,10 @@ if(!isset($_REQUEST['action'])){
 $action = $_REQUEST['action'];
 switch($action){
 	case 'formPrac':{
-		$lesPrac=$pdo->getPrac();
+		$lesPracticiens=$pdo->getPrac();
+		if(isset($_REQUEST['practicien'])){
+			$lePracticien=$pdo->getInfoPrac($_REQUEST['practicien']);
+		}
 		include("vues/v_formPracticien.php");
 		break;
 	}
@@ -15,11 +18,14 @@ switch($action){
 		break;
 	}
 	case 'formRap':{
-		$lesPracticiens=$pdo->getPrac();
 		include("vues/v_formRapport.php");
 		break;
 	}
 	case 'formMed':{
+		include("vues/v_formMed.php");
+		break;
+	}
+	case 'medicament':{
 		include("vues/v_formMed.php");
 		break;
 	}
