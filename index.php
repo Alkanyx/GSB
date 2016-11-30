@@ -6,9 +6,11 @@ include("vues/v_entete.php") ;
 session_start();
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = estConnecte();
-if(!isset($_REQUEST['uc']) || !$estConnecte){
+if(!isset($_REQUEST['uc']) && !$estConnecte){
      $_REQUEST['uc'] = 'connexion';
-}	 
+}else{
+	$_REQUEST['uc'] = 'consulter';
+}
 $uc = $_REQUEST['uc'];
 switch($uc){
 	case 'consulter':{
