@@ -16,7 +16,7 @@
 		} else {
 			echo '<option value=0>' . $lePracticien ['nom'] . ' ' . $lePracticien ['prenom'] . '</option>';
 		}
-		foreach ( $lesPracticiens as $unPractcien ) {
+		foreach ( $lesPracticiens as $unPracticien ) {
 			if (! isset ( $_REQUEST ['visiteur'] ) || $unVisiteur ['id'] != $leVisiteur ['id']) {
 				echo '
 			<option value=index.php?uc=comptable&action=listeFraisComptable&visiteur=' . $unVisiteur ['id'] . '>' . $unVisiteur ['nom'] . ' ' . $unVisiteur ['prenom'] . '</option>';
