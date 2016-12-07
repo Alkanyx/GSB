@@ -41,6 +41,7 @@ class PdoGsb {
 		}
 		return PdoGsb::$monPdoGsb;
 	}
+	
 	/**
 	 * Retourne les informations d'un visiteur
 	 *
@@ -55,6 +56,23 @@ class PdoGsb {
 		$req = "select * from praticien where pra_num=$pracNum";
 		$rs = PdoGsb::$monPdo->query ( $req );
 		$ligne = $rs->fetch ();
+		return $ligne;
+	}
+	
+	/**
+	 * Retourne les informations d'un visiteur
+	 *
+	 * @param
+	 *        	$login
+	 * @param
+	 *        	$mdp
+	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
+	 *
+	 */
+	public function getInfoMedoc($medocNum) {
+		$req = "select * from medicament INNER JOIN famille ON medicament.fam_code=famille.fam_code where MED_DEPOTLEGAL='$medocNum'";
+		$rs = PdoGsb::$monPdo->query ( $req );
+		$ligne = $rs->fetch();
 		return $ligne;
 	}
 	
@@ -85,6 +103,13 @@ class PdoGsb {
 	
 	public function getPrac() {
 		$req = "select * from  praticien";
+		$res = PdoGsb::$monPdo->query ( $req );
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+	
+	public function getMedoc() {
+		$req = "select * from  medicament";
 		$res = PdoGsb::$monPdo->query ( $req );
 		$lesLignes = $res->fetchAll();
 		return $lesLignes;
