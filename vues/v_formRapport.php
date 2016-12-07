@@ -1,21 +1,21 @@
 
 <script language="javascript">
 		function selectionne(pValeur, pSelection,  pObjet) {
-			//active l'objet pObjet du formulaire si la valeur sÃ©lectionnÃ©e (pSelection) est Ã©gale Ã  la valeur attendue (pValeur)
+			//active l'objet pObjet du formulaire si la valeur sélectionnée (pSelection) est égale Ã  la valeur attendue (pValeur)
 			if (pSelection==pValeur) 
 				{ formRAPPORT_VISITE.elements[pObjet].disabled=false; }
 			else { formRAPPORT_VISITE.elements[pObjet].disabled=true; }
 		}
 	</script>
 <script language="javascript">
-        function ajoutLigne( pNumero){//ajoute une ligne de produits/qtÃ© Ã  la div "lignes"     
+        function ajoutLigne( pNumero){//ajoute une ligne de produits/qté Ã  la div "lignes"     
 			//masque le bouton en cours
 			document.getElementById("but"+pNumero).setAttribute("hidden","true");	
-			pNumero++;										//incrÃ©mente le numÃ©ro de ligne
-            var laDiv=document.getElementById("lignes");	//rÃ©cupÃ¨re l'objet DOM qui contient les donnÃ©es
-			var titre = document.createElement("label") ;	//crÃ©e un label
+			pNumero++;										//incrémente le numéro de ligne
+            var laDiv=document.getElementById("lignes");	//récupÃ¨re l'objet DOM qui contient les données
+			var titre = document.createElement("label") ;	//crée un label
 			laDiv.appendChild(titre) ;						//l'ajoute Ã  la DIV
-			titre.setAttribute("class","titre") ;			//dÃ©finit les propriÃ©tÃ©s
+			titre.setAttribute("class","titre") ;			//définit les propriétés
 			titre.innerHTML= "   Produit : ";
 			var liste = document.createElement("select");	//ajoute une liste pour proposer les produits
 			laDiv.appendChild(liste) ;
@@ -31,7 +31,7 @@
 			qte.setAttribute("type","text");
 			var bouton = document.createElement("input");
 			laDiv.appendChild(bouton);
-			//ajoute une gestion Ã©venementielle en faisant Ã©voluer le numÃ©ro de la ligne
+			//ajoute une gestion évenementielle en faisant évoluer le numéro de la ligne
 			bouton.setAttribute("onClick","ajoutLigne("+ pNumero +");");
 			bouton.setAttribute("type","button");
 			bouton.setAttribute("value","+");
@@ -45,19 +45,15 @@
 	<label class="titre">NUMERO :</label><input type="text" size="10"
 		name="RAP_NUM" class="zone" /> <label class="titre">DATE VISITE :</label><input
 		type="text" size="10" name="RAP_DATEVISITE" class="zone" /> <label
-		class="titre">PRATICIEN :</label><select name="PRA_NUM" id="selectPrac"
-				onChange="javascript:location.href = this.value;">
+		class="titre">PRATICIEN :</label><select name="PRA_NUM">
 		<?php
 		if (! isset ( $_REQUEST ['practicien'] )) {
 			echo '<option value=0> { Sélectionner un practicien } </option>';
-		} else {
-			echo '<option value=0>' . $lePracticien ['PRA_NOM'] . ' ' . $lePracticien ['PRA_PRENOM'] . '</option>';
-		}
+		} 
 		foreach ( $lesPracticiens as $unPracticien ) {
-			if ($unPracticien ['PRA_NUM'] != $lePracticien ['PRA_NUM']) {
 				echo '
-			<option value=index.php?uc=consulter&action=formPrac&practicien=' . $unPracticien ['PRA_NUM'] . '>' . $unPracticien ['PRA_NOM'] . ' ' . $unPracticien ['PRA_PRENOM'] . '</option>';
-			}
+			<option value=' . $unPracticien ['PRA_NUM'] . '> '.$unPracticien['PRA_NOM'].' '.$unPracticien['PRA_PRENOM'].'</option>';
+			
 		}?>></select>
 	<label class="titre">COEFFICIENT :</label><input type="text" size="6"
 		name="PRA_COEFF" class="zone" /> <label class="titre">REMPLACANT :</label><input
@@ -68,7 +64,7 @@
 		name="RAP_DATE" class="zone" /> <label class="titre">MOTIF :</label><select
 		name="RAP_MOTIF" class="zone"
 		onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
-		<option value="PRD">PÃ©riodicitÃ©</option>
+		<option value="PRD">Périodicité</option>
 		<option value="ACT">Actualisation</option>
 		<option value="REL">Relance</option>
 		<option value="SOL">Sollicitation praticien</option>
@@ -76,7 +72,7 @@
 	</select><input type="text" name="RAP_MOTIFAUTRE" class="zone"
 		disabled="disabled" /> <label class="titre">BILAN :</label>
 	<textarea rows="5" cols="50" name="RAP_BILAN" class="zone"></textarea>
-	<label class="titre"><h3>ElÃ©ments prÃ©sentÃ©s</h3></label> <label
+	<label class="titre"><h3>Eléments présentés</h3></label> <label
 		class="titre">PRODUIT 1 : </label><select name="PROD1" class="zone"></select>
 	<label class="titre">PRODUIT 2 : </label><select name="PROD2"
 		class="zone"></select> <label class="titre">DOCUMENTATION OFFERTE :</label><input

@@ -18,6 +18,7 @@ switch($action){
 		break;
 	}
 	case 'formRap':{
+		$lesPracticiens=$pdo->getPrac();
 		include("vues/v_formRapport.php");
 		break;
 	}
@@ -26,11 +27,9 @@ switch($action){
 		break;
 	}
 	case 'saisirRap':{
-		$lesPracticiens=$pdo->getPrac();
-		$lePracticien=$pdo->getInfoPrac($_REQUEST['practicien']);
 		if(isset($_SESSION['login'])){
 		$IdVis = $pdo->getMatricule($_SESSION['login']);
-		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],'21',$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
+		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],$_POST['PRA_NUM'],$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
 		}else{
 			echo "erreur";
 		}
