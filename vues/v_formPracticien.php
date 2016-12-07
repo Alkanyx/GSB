@@ -11,6 +11,8 @@
 				onChange="javascript:location.href = this.value;">
 		
 		<?php
+
+		var_dump($_SESSION['login']);
 		if (! isset ( $_REQUEST ['practicien'] )) {
 			echo '<option value=0> { Sélectionner un practicien } </option>';
 		} else {

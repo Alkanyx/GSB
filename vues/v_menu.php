@@ -24,8 +24,12 @@
 			<li><a href="index.php?uc=consulter&action=formMed">Médicaments</a></li>
 		</ul>
 		<li>Connexion</li>
-		<ul>
+		<ul><?php  
+		if(isset($_SESSION['login'])){?>
 			<li><a href="index.php?uc=connexion&action=deconnexion">Déconnexion</a></li>
+			<?php }else{?>
+			<li><a href="index.php?uc=connexion&action=demandeconnexion">Connexion</a></li>
+			<?php }?>
 		</ul>
 	</ul>
 </div>

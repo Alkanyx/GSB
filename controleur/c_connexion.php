@@ -24,8 +24,6 @@ switch($action){
 		break;
 	}
 	case 'deconnexion':{
-		deconnecter();
-		echo "fdp";
 		header('location:index.php');
 		break;
 	}
