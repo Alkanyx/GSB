@@ -12,7 +12,6 @@
  * @return vrai ou faux
  */
 function estConnecte() {
-		var_dump($_SESSION['login']);
 	return isset ( $_SESSION ['login'] );
 }
 /**
