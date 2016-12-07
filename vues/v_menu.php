@@ -25,6 +25,7 @@
 		</ul>
 		<li>Connexion</li>
 		<ul><?php  
+		
 		if(isset($_SESSION['login'])){?>
 			<li><a href="index.php?uc=connexion&action=deconnexion">Déconnexion</a></li>
 			<?php }else{?>
