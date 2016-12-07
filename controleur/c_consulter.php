@@ -31,9 +31,10 @@ switch($action){
 		break;
 	}
 	case 'saisirRap':{
+		$lesPracticiens=$pdo->getPrac();
 		if(isset($_SESSION['login'])){
 		$IdVis = $pdo->getMatricule($_SESSION['login']);
-		echo $pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],'21',$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
+		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],'21',$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
 		}else{
 			echo "erreur";
 		}
