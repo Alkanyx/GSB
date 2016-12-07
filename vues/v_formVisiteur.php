@@ -1,18 +1,39 @@
-<title>formulaire VISITEUR</title>
-		<form name="formVISITEUR" method="post" action="recupVISITEUR.php">
-			<h1>Visiteurs</h1>
-			<select name="lstDept" class="titre"><option value="">Département</option>
-				<option value="01">Ain</option></select> <select name="lstVisiteur"
-				class="zone"><option value="a131">Villechalane</option></select> <label
-				class="titre">NOM :</label><input type="text" size="25"
-				name="VIS_NOM" class="zone" /> <label class="titre">PRENOM :</label><input
-				type="text" size="50" name="Vis_PRENOM" class="zone" /> <label
-				class="titre">ADRESSE :</label><input type="text" size="50"
-				name="VIS_ADRESSE" class="zone" /> <label class="titre">CP :</label><input
-				type="text" size="5" name="VIS_CP" class="zone" /> <label
-				class="titre">VILLE :</label><input type="text" size="30"
-				name="VIS_VILLE" class="zone" /> <label class="titre">SECTEUR :</label><input
-				type="text" size="1" name="SEC_CODE" class="zone" /> <label
-				class="titre">&nbsp;</label><input class="zone" type="button"
-				value="<"></input><input class="zone" type="button" value=">"></input>
+
+
+<title>formulaire PRATICIEN</title>
+
+<div name="droite" style="float: left; width: 80%;">
+	<div name="bas"
+		style="margin: 10 2 2 2; clear: left; background-color: 77AADD; color: white; height: 88%;">
+		<h1>Rapport de visite</h1>
+		<form name="formListeRecherche">
+			<table>
+				<tr>
+					<td width="50%" align="right" style="color:white;"><label>Date de début: </label></td>
+					<td align="left"><input type="text" class="calendrier"
+						name="dateDebut" id="dateDebut" value="" required /></td>
+				</tr>
+				<tr>
+					<td width="50%" align="right" style="color:white;"><label>Date de fin: </label></td>
+					<td align="left"><input type="text" class="calendrier"
+						name="dateFin" id="dateFin" value="" required /></td>
+				</tr>
+				<select name="select" id="selectPrac"
+				onChange="javascript:location.href = this.value;">
+		
+		<?php
+		if (! isset ( $_REQUEST ['practicien'] )) {
+			echo '<option value=0> { Sélectionner un practicien } </option>';
+		} else {
+			echo '<option value=0>' . $lePracticien ['PRA_NOM'] . ' ' . $lePracticien ['PRA_PRENOM'] . '</option>';
+		}
+		foreach ( $lesPracticiens as $unPracticien ) {
+			if ($unPracticien ['PRA_NUM'] != $lePracticien ['PRA_NUM']) {
+				echo '
+			<option value=index.php?uc=consulter&action=formPrac&practicien=' . $unPracticien ['PRA_NUM'] . '>' . $unPracticien ['PRA_NOM'] . ' ' . $unPracticien ['PRA_PRENOM'] . '</option>';
+			}
+		}
+			</table>
 		</form>
+	</div>
+</div>

@@ -14,6 +14,11 @@ switch($action){
 		break;
 	}
 	case 'formVis':{
+		$lesPracticiens=$pdo->getPrac();
+		//$lesRapports=$pdo->getRapports($_SESSION['idVis']);
+		if(isset($_REQUEST['medicament'])){
+			$leMedicament=$pdo->getInfoMedoc($_REQUEST['medicament']);
+		}
 		include("vues/v_formVisiteur.php");
 		break;
 	}
