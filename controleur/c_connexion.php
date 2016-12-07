@@ -24,6 +24,7 @@ switch($action){
 		break;
 	}
 	case 'deconnexion':{
+		session_destroy();
 		header('location:index.php');
 		break;
 	}
