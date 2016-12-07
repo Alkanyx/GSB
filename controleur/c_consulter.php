@@ -27,8 +27,8 @@ switch($action){
 	}
 	case 'saisirRap':{
 		if(isset($_SESSION['login'])){
-		$visiteur = $pdo->getMatricule($_SESSION['login']);
-		//$pdo->saisirRapport($IdVis,$Num,$DateVis,$NumPrat,$RapDate,$IdMotif,$RapMotif,$RapBilan);
+		$IdVis = $pdo->getMatricule($_SESSION['login']);
+		echo $pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],'21',$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
 		}else{
 			echo "erreur";
 		}
