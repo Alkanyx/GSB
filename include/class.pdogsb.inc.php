@@ -1,6 +1,6 @@
 <?php
 /** 
- * Classe d'accès aux données. 
+ * Classe d'accÃ¨s aux donnÃ©es. 
  
  * Utilise les services de la classe PDO
  * pour l'application GSB
@@ -18,8 +18,8 @@ class PdoGsb {
 	private static $monPdo;
 	private static $monPdoGsb = null;
 	/**
-	 * Constructeur privé, crée l'instance de PDO qui sera sollicitée
-	 * pour toutes les méthodes de la classe
+	 * Constructeur privÃ©, crÃ©e l'instance de PDO qui sera sollicitÃ©e
+	 * pour toutes les mÃ©thodes de la classe
 	 */
 	private function __construct() {
 		PdoGsb::$monPdo = new PDO ( PdoGsb::$serveur . ';' . PdoGsb::$bdd, PdoGsb::$user, PdoGsb::$mdp );
@@ -29,7 +29,7 @@ class PdoGsb {
 		PdoGsb::$monPdo = null;
 	}
 	/**
-	 * Fonction statique qui crée l'unique instance de la classe
+	 * Fonction statique qui crÃ©e l'unique instance de la classe
 	 *
 	 * Appel : $instancePdoGsb = PdoGsb::getPdoGsb();
 	 *
@@ -48,7 +48,7 @@ class PdoGsb {
 	 *        	$login
 	 * @param
 	 *        	$mdp
-	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
+	 * @return l'id, le nom et le prÃ©nom sous la forme d'un tableau associatif
 	 *        
 	 */
 	public function getInfoPrac($pracNum) {
@@ -60,10 +60,10 @@ class PdoGsb {
 	
 	/**
 	 * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
-	 * concernées par les deux arguments
+	 * concernÃ©es par les deux arguments
 	 *
-	 * La boucle foreach ne peut être utilisée ici car on procède
-	 * à une modification de la structure itérée - transformation du champ date-
+	 * La boucle foreach ne peut Ãªtre utilisÃ©e ici car on procÃ¨de
+	 * Ã  une modification de la structure itÃ©rÃ©e - transformation du champ date-
 	 *
 	 * @param
 	 *        	$idVisiteur
@@ -90,7 +90,7 @@ class PdoGsb {
 		return $lesLignes;
 	}
 	/**
-	 * Teste si un visiteur possède une fiche de frais pour le mois passé en argument
+	 * Teste si un visiteur possÃ¨de une fiche de frais pour le mois passÃ© en argument
 	 *
 	 * @param
 	 *        	$idVisiteur
@@ -123,15 +123,15 @@ class PdoGsb {
 	
 	public function saisirRapport($IdVis,$Num,$DateVis,$NumPrat,$RapDate,$IdMotif,$RapBilan) {
 		$req = "insert into rapport_visite(VIS_MATRICULE,RAP_NUM,PRA_NUM,RAP_DATE,RAP_BILAN,idMotif,rap_etat,rap_conf,date_visite) 
-		values('$IdVis','$Num','$NumPrat','$RapDate','$RapBilan','$IdMotif','validé','confimé','$DateVis')";
+		values('$IdVis','$Num','$NumPrat','$RapDate','$RapBilan','$IdMotif','validÃ©','confimÃ©','$DateVis')";
 		//PdoGsb::$monPdo->exec ( $req );
 		return $req;
 	}
 	
 	
 	/**
-	 * Crée un nouveau frais hors forfait pour un visiteur un mois donné
-	 * à partir des informations fournies en paramètre
+	 * CrÃ©e un nouveau frais hors forfait pour un visiteur un mois donnÃ©
+	 * Ã  partir des informations fournies en paramÃ¨tre
 	 *
 	 * @param
 	 *        	$idVisiteur
@@ -140,7 +140,7 @@ class PdoGsb {
 	 * @param $libelle :
 	 *        	le libelle du frais
 	 * @param $date :
-	 *        	la date du frais au format français jj//mm/aaaa
+	 *        	la date du frais au format franÃ§ais jj//mm/aaaa
 	 * @param $montant :
 	 *        	le montant
 	 *        	
@@ -152,7 +152,7 @@ class PdoGsb {
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	/**
-	 * Supprime le frais hors forfait dont l'id est passé en argument
+	 * Supprime le frais hors forfait dont l'id est passÃ© en argument
 	 *
 	 * @param
 	 *        	$idFrais
@@ -167,7 +167,7 @@ class PdoGsb {
 	 *
 	 * @param
 	 *        	$idVisiteur
-	 * @return un tableau associatif de clé un mois -aaaamm- et de valeurs l'année et le mois correspondant
+	 * @return un tableau associatif de clÃ© un mois -aaaamm- et de valeurs l'annÃ©e et le mois correspondant
 	 *        
 	 */
 	public function getLesMoisDisponibles($idVisiteur) {
@@ -190,13 +190,13 @@ class PdoGsb {
 		return $lesMois;
 	}
 	/**
-	 * Retourne les informations d'une fiche de frais d'un visiteur pour un mois donné
+	 * Retourne les informations d'une fiche de frais d'un visiteur pour un mois donnÃ©
 	 *
 	 * @param
 	 *        	$idVisiteur
 	 * @param $mois sous
 	 *        	la forme aaaamm
-	 * @return un tableau avec des champs de jointure entre une fiche de frais et la ligne d'état
+	 * @return un tableau avec des champs de jointure entre une fiche de frais et la ligne d'Ã©tat
 	 *        
 	 */
 	public function getLesInfosFicheFrais($idVisiteur, $mois) {
@@ -208,9 +208,9 @@ class PdoGsb {
 		return $laLigne;
 	}
 	/**
-	 * Modifie l'état et la date de modification d'une fiche de frais
+	 * Modifie l'Ã©tat et la date de modification d'une fiche de frais
 	 *
-	 * Modifie le champ idEtat et met la date de modif à aujourd'hui
+	 * Modifie le champ idEtat et met la date de modif Ã  aujourd'hui
 	 *
 	 * @param
 	 *        	$idVisiteur
