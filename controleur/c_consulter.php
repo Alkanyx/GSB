@@ -27,6 +27,7 @@ switch($action){
 	}
 	case 'saisirRap':{
 		$lesPracticiens=$pdo->getPrac();
+		$lePracticien=$pdo->getInfoPrac($_REQUEST['practicien']);
 		if(isset($_SESSION['login'])){
 		$IdVis = $pdo->getMatricule($_SESSION['login']);
 		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],'21',$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
