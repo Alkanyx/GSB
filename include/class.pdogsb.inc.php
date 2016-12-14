@@ -129,6 +129,7 @@ class PdoGsb {
 		$res = PdoGsb::$monPdo->prepare ( "select * from visiteur 
 		where visiteur.login=:login and visiteur.password=:mdp" );
 		$res->execute ( array (
+				
 				'login' => $login,
 				'mdp' => $mdp 
 		) );
