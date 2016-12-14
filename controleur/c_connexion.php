@@ -18,14 +18,12 @@ switch($action){
 			include("vues/v_connexion.php");
 		}
 		else{
-			$_SESSION['login']=$visiteur['login'];
-			header('location:index.php?uc=consulter');
+			$_SESSION['login']=$visiteur['VIS_MATRICULE'];
 		}
 		break;
 	}
 	case 'deconnexion':{
 		session_destroy();
-		header('location:index.php');
 		break;
 	}
 	

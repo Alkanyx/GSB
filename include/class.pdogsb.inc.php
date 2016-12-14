@@ -59,6 +59,41 @@ class PdoGsb {
 		return $ligne;
 	}
 	
+	
+	/**
+	 * Retourne les informations d'un visiteur
+	 *
+	 * @param
+	 *        	$login
+	 * @param
+	 *        	$mdp
+	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
+	 *
+	 */
+	public function getPracVisit($visNum) {
+		$req = "select * from praticien INNER JOIN rapport_visite ON praticien.PRA_NUM=rapport_visite.PRA_NUM WHERE VIS_MATRICULE='$visNum'";
+		$rs = PdoGsb::$monPdo->query ( $req );
+		$lesLignes = $rs->fetchAll ();
+		return $lesLignes;
+	}
+	
+	/**
+	 * Retourne les informations d'un visiteur
+	 *
+	 * @param
+	 *        	$login
+	 * @param
+	 *        	$mdp
+	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
+	 *
+	 */
+	public function getRapports($visNum,$praNum,$dateDebut,$dateFin) {
+		$req = "select * from rapport_visite WHERE VIS_MATRICULE='$visNum' AND PRA_NUM='$praNum' AND RAP_DATE BETWEEN '$dateDebut' AND '$dateFin'";
+		$rs = PdoGsb::$monPdo->query ( $req );
+		$lesLignes = $rs->fetchAll ();
+		return $lesLignes;
+	}
+	
 	/**
 	 * Retourne les informations d'un visiteur
 	 *

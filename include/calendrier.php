@@ -548,82 +548,71 @@ window.onload = init_evenement;
 </script>
 
 <style>
-.calendar
-{
-    background-color:#f7f6f3;
-    position:absolute;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:12px;
-    border: 1px solid #e7e7e7;
- 
+.calendar {
+	background-color: #f7f6f3;
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px solid #e7e7e7;
 }
- 
-.calendar a
-{
-    text-decoration:none;
-    color:#ffffff;
-    font-weight:bold;
+
+.calendar a {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
 }
- 
-.ListeDate
-{
-    background-color:#FFFFFF;
+
+.ListeDate {
+	background-color: #FFFFFF;
 }
- 
-#Contenant_Calendar
-{
-    float:left;
-    width:100%;
-    overflow:hidden;
-    position:relative;
+
+#Contenant_Calendar {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
 }
- 
-#Contenant_Calendar span
-{
-    float:left;
-    display:block;
-    width:30px;
-    height:30px;
-    line-height:30px;
-    text-align:center;
+
+#Contenant_Calendar span {
+	float: left;
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
 }
- 
-.DayDate:hover
-{
-    background-color:#e7e7e7;
-    cursor:pointer;
+
+.DayDate:hover {
+	background-color: #e7e7e7;
+	cursor: pointer;
 }
- 
-#curentDateString
-{
-    width:100%;
-    text-align:center;
+
+#curentDateString {
+	width: 100%;
+	text-align: center;
 }
- 
-.titleMonth
-{
-    width: 100%;
-    background-color: #777;
-    color: #FFF;
-    text-align: center;
-    margin: 0px;
-    font-weight: bold;
-    height: 25px;
+
+.titleMonth {
+	width: 100%;
+	background-color: #777;
+	color: #FFF;
+	text-align: center;
+	margin: 0px;
+	font-weight: bold;
+	height: 25px;
 }
- 
-.separator
-{
-    float:left;
-    display:block;
-    width:25px;
+
+.separator {
+	float: left;
+	display: block;
+	width: 25px;
 }
- 
-.currentDay
-{
-    font-weight:bold;
-    background-color:rgb(58, 137, 35);
-    color:white;
-}/*
+
+.currentDay {
+	font-weight: bold;
+	background-color: rgb(58, 137, 35);
+	color: white;
+} /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.

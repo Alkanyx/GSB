@@ -14,11 +14,14 @@ switch($action){
 		break;
 	}
 	case 'formVis':{
-		$lesPracticiens=$pdo->getPrac();
-
-		//$lesRapports=$pdo->getRapports($_SESSION['idVis']);
-		if(isset($_REQUEST['medicament'])){
-			$leMedicament=$pdo->getInfoMedoc($_REQUEST['medicament']);
+		$lesPracticiens=$pdo->getPracVisit($_SESSION['login']);
+		
+		if(isset($_REQUEST['select'])){
+			$dateDebut = date('Y-m-d', strtotime(str_replace('/', '-', $_REQUEST['dateDebut'])));
+			$dateFin = date('Y-m-d', strtotime(str_replace('/', '-', $_REQUEST['dateFin'])));
+			$lePracticien=$pdo->getInfoPrac($_REQUEST['select']);
+			$lesRapports=$pdo->getRapports($_SESSION['login'],$_REQUEST['select'],$dateDebut,$dateFin);
+			var_dump($lesRapports);
 		}
 		include("vues/v_formVisiteur.php");
 		break;
