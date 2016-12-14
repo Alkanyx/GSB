@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-
 <title>formulaire PRATICIEN</title>
 
 <div name="droite" style="float: left; width: 80%;">
