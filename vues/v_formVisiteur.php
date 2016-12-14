@@ -8,7 +8,7 @@
 			<table>
 				<tr>
 					<td width="50%" align="right" style="color: white;"><label>Date de
-							dÃ©but: </label></td>
+							début: </label></td>
 					<td align="left"><input type="text" class="calendrier"
 						name="dateDebut" id="dateDebut" value="" required /></td>
 				</tr>
@@ -23,7 +23,7 @@
 		
 		<?php
 		if (! isset ( $_REQUEST ['practicien'] )) {
-			echo '<option value=0> { SÃ©lectionner un practicien } </option>';
+			echo '<option value=0> { Sélectionner un practicien } </option>';
 		} else {
 			echo '<option value=0>' . $lePracticien ['PRA_NOM'] . ' ' . $lePracticien ['PRA_PRENOM'] . '</option>';
 		}
