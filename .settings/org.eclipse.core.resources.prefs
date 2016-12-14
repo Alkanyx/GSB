@@ -6,6 +6,10 @@ encoding//vues/v_formPracticien.php=UTF-8
 encoding//vues/v_formVisiteur.php=UTF-8
 =======
 encoding//vues/v_formRapport.php=UTF-8
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Alkanyx/GSB.git
+=======
+encoding//vues/v_formVisiteur.php=UTF-8
 >>>>>>> branch 'master' of https://github.com/Alkanyx/GSB.git
 encoding//vues/v_medicament.php=UTF-8
 encoding//vues/v_menu.php=UTF-8

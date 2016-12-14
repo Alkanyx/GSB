@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <title>formulaire PRATICIEN</title>
