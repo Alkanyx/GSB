@@ -150,6 +150,13 @@ class PdoGsb {
 		PdoGsb::$monPdo->exec ( $req ); 
 	}
 	
+
+	public function saisirRapportRemp($IdVis,$Num,$DateVis,$NumPrat,$RapDate,$IdMotif,$RapBilan,$NumRemp) {
+		$req = "insert into rapport_visite(VIS_MATRICULE,RAP_NUM,PRA_NUM,RAP_DATE,RAP_BILAN,idMotif,rap_etat,rap_conf,date_visite,pra_numRemp)
+		values('$IdVis','$Num','$NumPrat','$RapDate','$RapBilan','$IdMotif','validé','confimé','$DateVis','$NumRemp')";
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
 	
 	/**
 	 * Crée un nouveau frais hors forfait pour un visiteur un mois donné
