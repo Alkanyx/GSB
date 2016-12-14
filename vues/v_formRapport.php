@@ -45,21 +45,30 @@
 	<label class="titre">NUMERO :</label><input type="text" size="10"
 		name="RAP_NUM" class="zone" /> <label class="titre">DATE VISITE :</label><input
 		type="text" size="10" name="RAP_DATEVISITE" class="zone" /> <label
-		class="titre">PRATICIEN :</label><select name="PRA_NUM">
+		class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone">
 		<?php
 		if (! isset ( $_REQUEST ['practicien'] )) {
-			echo '<option value=0> { Sélectionner un practicien } </option>';
+			echo '<option value=0> Sélectionner un practicien </option>';
 		} 
 		foreach ( $lesPracticiens as $unPracticien ) {
 				echo '
 			<option value=' . $unPracticien ['PRA_NUM'] . '> '.$unPracticien['PRA_NOM'].' '.$unPracticien['PRA_PRENOM'].'</option>';
 			
-		}?>></select>
+		}?></select>
 	<label class="titre">COEFFICIENT :</label><input type="text" size="6"
 		name="PRA_COEFF" class="zone" /> <label class="titre">REMPLACANT :</label><input
-		type="checkbox" class="zone" checked="false"
-		onClick="selectionne(true,this.checked,'PRA_REMPLACANT');" /><select
-		name="PRA_REMPLACANT" disabled="disabled" class="zone"></select> <label
+		type="checkbox" class="zone" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');" /><select
+		name="PRA_REMPLACANT" disabled="disabled" class="zone">
+		<?php
+		if (! isset ( $_REQUEST ['practicien'] )) {
+			echo '<option value=0> Sélectionner un remplacant </option>';
+		} 
+		foreach ( $lesPracticiens as $unPracticien ) {
+				echo '
+			<option value=' . $unPracticien ['PRA_NUM'] . '> '.$unPracticien['PRA_NOM'].' '.$unPracticien['PRA_PRENOM'].'</option>';
+			
+		}?>
+		</select> <label
 		class="titre">DATE :</label><input type="text" size="19"
 		name="RAP_DATE" class="zone" /> <label class="titre">MOTIF :</label><select
 		name="RAP_MOTIF" class="zone"
@@ -68,9 +77,7 @@
 		<option value="ACT">Actualisation</option>
 		<option value="REL">Relance</option>
 		<option value="SOL">Sollicitation praticien</option>
-		<option value="AUT">Autre</option>
-	</select><input type="text" name="RAP_MOTIFAUTRE" class="zone"
-		disabled="disabled" /> <label class="titre">BILAN :</label>
+	</select> <label class="titre">BILAN :</label>
 	<textarea rows="5" cols="50" name="RAP_BILAN" class="zone"></textarea>
 	<label class="titre"><h3>Eléments présentés</h3></label> <label
 		class="titre">PRODUIT 1 : </label><select name="PROD1" class="zone"></select>

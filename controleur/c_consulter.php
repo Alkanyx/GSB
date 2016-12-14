@@ -37,10 +37,14 @@ switch($action){
 	}
 	case 'saisirRap':{
 		if(isset($_SESSION['login'])){
-		$IdVis = $pdo->getMatricule($_SESSION['login']);
-		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],$_POST['PRA_NUM'],$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
+			$IdVis = $pdo->getMatricule($_SESSION['login']);
+			if(isset ( $_POST['PRA_REMPLACANT'])){
+				$pdo->saisirRapportRemp($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],$_POST['PRA_NUM'],$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN'],$_POST['PRA_REMPLACANT']);
+			}else{
+				$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],$_POST['PRA_NUM'],$_POST['RAP_DATE'],$_POST['RAP_MOTIF'],$_POST['RAP_BILAN']);
+			}
 		}else{
-			echo "erreur";
+				echo "erreur";
 		}
 		break;
 	}
