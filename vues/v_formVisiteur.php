@@ -1,7 +1,7 @@
 <title>formulaire VISITEUR</title>
 		<form name="formVISITEUR" method="post" action="recupVISITEUR.php">
 			<h1>Visiteurs</h1>
-			<select name="lstDept" class="titre"><option value="">Département</option>
+			<select name="lstDept" class="titre"><option value="">DÃ©partement</option>
 				<option value="01">Ain</option></select> <select name="lstVisiteur"
 				class="zone"><option value="a131">Villechalane</option></select> <label
 				class="titre">NOM :</label><input type="text" size="25"
