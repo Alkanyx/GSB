@@ -15,6 +15,7 @@ switch($action){
 	}
 	case 'formVis':{
 		$lesPracticiens=$pdo->getPrac();
+
 		//$lesRapports=$pdo->getRapports($_SESSION['idVis']);
 		if(isset($_REQUEST['medicament'])){
 			$leMedicament=$pdo->getInfoMedoc($_REQUEST['medicament']);
@@ -23,6 +24,7 @@ switch($action){
 		break;
 	}
 	case 'formRap':{
+		$lesPracticiens=$pdo->getPrac();
 		include("vues/v_formRapport.php");
 		break;
 	}
@@ -31,10 +33,9 @@ switch($action){
 		break;
 	}
 	case 'saisirRap':{
-		$lesPracticiens=$pdo->getPrac();
 		if(isset($_SESSION['login'])){
 		$IdVis = $pdo->getMatricule($_SESSION['login']);
-		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],'21',$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
+		$pdo->saisirRapport($IdVis,$_POST['RAP_NUM'],$_POST['RAP_DATEVISITE'],$_POST['PRA_NUM'],$_POST['RAP_DATE'],'1',$_POST['RAP_BILAN']);
 		}else{
 			echo "erreur";
 		}

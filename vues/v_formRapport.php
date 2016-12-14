@@ -1,27 +1,27 @@
 
 <script language="javascript">
 		function selectionne(pValeur, pSelection,  pObjet) {
-			//active l'objet pObjet du formulaire si la valeur sélectionnée (pSelection) est égale à la valeur attendue (pValeur)
+			//active l'objet pObjet du formulaire si la valeur sélectionnée (pSelection) est égale Ã  la valeur attendue (pValeur)
 			if (pSelection==pValeur) 
 				{ formRAPPORT_VISITE.elements[pObjet].disabled=false; }
 			else { formRAPPORT_VISITE.elements[pObjet].disabled=true; }
 		}
 	</script>
 <script language="javascript">
-        function ajoutLigne( pNumero){//ajoute une ligne de produits/qté à la div "lignes"     
+        function ajoutLigne( pNumero){//ajoute une ligne de produits/qté Ã  la div "lignes"     
 			//masque le bouton en cours
 			document.getElementById("but"+pNumero).setAttribute("hidden","true");	
 			pNumero++;										//incrémente le numéro de ligne
-            var laDiv=document.getElementById("lignes");	//récupère l'objet DOM qui contient les données
+            var laDiv=document.getElementById("lignes");	//récupÃ¨re l'objet DOM qui contient les données
 			var titre = document.createElement("label") ;	//crée un label
-			laDiv.appendChild(titre) ;						//l'ajoute à la DIV
+			laDiv.appendChild(titre) ;						//l'ajoute Ã  la DIV
 			titre.setAttribute("class","titre") ;			//définit les propriétés
 			titre.innerHTML= "   Produit : ";
 			var liste = document.createElement("select");	//ajoute une liste pour proposer les produits
 			laDiv.appendChild(liste) ;
 			liste.setAttribute("name","PRA_ECH"+pNumero) ;
 			liste.setAttribute("class","zone");
-			//remplit la liste avec les valeurs de la première liste construite en PHP à partir de la base
+			//remplit la liste avec les valeurs de la premiÃ¨re liste construite en PHP Ã  partir de la base
 			liste.innerHTML=formRAPPORT_VISITE.elements["PRA_ECH1"].innerHTML;
 			var qte = document.createElement("input");
 			laDiv.appendChild(qte);
@@ -45,7 +45,16 @@
 	<label class="titre">NUMERO :</label><input type="text" size="10"
 		name="RAP_NUM" class="zone" /> <label class="titre">DATE VISITE :</label><input
 		type="text" size="10" name="RAP_DATEVISITE" class="zone" /> <label
-		class="titre">PRATICIEN :</label><select name="PRA_NUM" class="zone"></select>
+		class="titre">PRATICIEN :</label><select name="PRA_NUM">
+		<?php
+		if (! isset ( $_REQUEST ['practicien'] )) {
+			echo '<option value=0> { Sélectionner un practicien } </option>';
+		} 
+		foreach ( $lesPracticiens as $unPracticien ) {
+				echo '
+			<option value=' . $unPracticien ['PRA_NUM'] . '> '.$unPracticien['PRA_NOM'].' '.$unPracticien['PRA_PRENOM'].'</option>';
+			
+		}?>></select>
 	<label class="titre">COEFFICIENT :</label><input type="text" size="6"
 		name="PRA_COEFF" class="zone" /> <label class="titre">REMPLACANT :</label><input
 		type="checkbox" class="zone" checked="false"
