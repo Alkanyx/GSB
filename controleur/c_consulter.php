@@ -55,6 +55,7 @@ switch($action){
 		}
 		include("vues/v_medicament.php");
 		break;
+
 	}
 }
 ?>
